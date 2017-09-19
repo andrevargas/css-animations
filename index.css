@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
 
 /* CSS pra deixar a página maneira */
 
@@ -14,7 +14,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #fff;
 }
 
@@ -32,7 +32,7 @@ body {
     height: 48px;
 }
 
-.title {
+.appname {
     height: 100%;
     margin: 0 1rem;
     line-height: 48px;
@@ -49,9 +49,8 @@ body {
 }
 
 .menu {
-    flex: 2;
     height: 100%;
-    margin: 0 1rem;
+    margin: 0 0 0 1rem;
 }
 
 .menu ul {
@@ -59,7 +58,6 @@ body {
     padding: 0;
     margin: 0;
 }
-
 .menu ul li {
     display: inline;
 }
@@ -82,34 +80,50 @@ body {
     background-color: #fff;
     border-radius: 4px;
     color: #daa357;
+    animation: pulsate 1s ease-in-out infinite;
 }
 
 .body {
     display: flex;
     height: calc(100vh - 10rem);
     margin-top: .5rem;
-}
-
-.left {
-    flex: .3;
+    flex-direction: column;
 }
 
 .content {
-    flex: 4;
-    height: 50vh;
+    flex: 1;
+    display: flex;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+.text {
+    flex: 5;
+    padding: 0 1rem;
+}
+
+.text p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-top: 1.6rem;
 }
 
 .right {
     flex: 1;
     background-image: url(./right-background.png);
     background-repeat: no-repeat;
-    background-position: 1.2rem 10rem;
+    background-position: right 4rem;
     background-size: 60%;
 }
 
 /* CSS que realmente importa */
 
-.title {
+.appname {
     opacity: 0;
     animation: fade-in-right ease .4s forwards;
 }
@@ -120,6 +134,10 @@ body {
     animation-delay: .8s;
 }
 
+.menu ul li.highlight a {
+    animation: pulsate 1s ease-in-out infinite;
+}
+
 .separator {
     transform: scaleX(0);
     transform-origin: left;
@@ -127,11 +145,25 @@ body {
     animation-delay: .4s;
 }
 
-.right {
+.title {
     opacity: 0;
     transform: translateY(50px);
     animation: fade-in-bottom .8s ease forwards;
     animation-delay: 1s;
+}
+
+.text {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fade-in-bottom .8s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.right {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fade-in-bottom 2s ease forwards;
+    animation-delay: 1.7s;
 }
 
 @keyframes fade-in-right {
@@ -162,5 +194,17 @@ body {
     }
     to {
         transform: scaleX(1);
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    }
+    30% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
     }
 }
