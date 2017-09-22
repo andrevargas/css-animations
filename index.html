@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS Animations!</title>
     <link rel="stylesheet" href="./layout.css">
-    <link rel="stylesheet" href="./animations.css">
+    <link rel="stylesheet" href="./layout-animations.css">
     <link rel="stylesheet" href="./examples.css">
 </head>
 <body>
@@ -41,7 +41,7 @@
                     <article class="text">
                         <p>As transições do CSS fornecem uma forma de controlar a velocidade das animações ao alterar propriedades CSS de um elemento.</p>
                         <p>Ao invés das mudanças de propriedades serem efetuadas de imediato, você pode fazer com que as mudanças aconteçam ao longo de um período de tempo.</p>
-                        <code style="white-space: pre-wrap">
+                        <code>
 element {
     transition-duration: 1s;
     transition-property: background-color;
@@ -50,7 +50,7 @@ element {
                         </code>
                     </article>
                     <aside class="example">
-                        <button class="example-1">Olha aqui!</button>
+                        <button class="example-1">Hover me!</button>
                     </aside>
                 </div>
             </div>
@@ -59,18 +59,33 @@ element {
                 <div class="content">
                     <article class="text">
                         <p>As animações CSS tornam possível animar transições de um estilo para outro. As animações consistem em dois componentes: um estilo descrevendo a animação e um set de <strong>keyframes</strong> que indicam quais propriedades o elemento possuirá em determinados estados.</p>
+                        <code>
+element {
+    animation-name: fade-in;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+                        </code>
                     </article>
                     <aside class="example">
-                        <div class="example-2">Vamos lá, você consegue! Eu confio em você! É sério!</div>
+                        <div class="example-2">Este é provavelmente o balão mais inútil de toda a web...</div>
                     </aside>
                 </div>
             </div>
             <div class="scene" data-id="golden-rule">
-                <h1 class="title">A Regra de Ouro!</h1>
+                <h1 class="title">A Regra de Ouro! <span class="sparkles"></span></h1>
                 <div class="content">
                     <article class="text">
-                        <p>Lorem ipsum dolor sit amet, per dico vulputate voluptatibus ne. Cetero feugait repudiare nec no, pro aliquam expetendis ea, ea minim error corrumpit per. Diceret praesent intellegam ex mei, ad mea recteque splendide posidonium, mei ex probo nullam. Ferri imperdiet te eam.</p>
-                        <p>His mollis discere denique eu. Id quo duis neglegentur consectetuer. Nonumes delicata in nam. Eos ut integre consectetuer, an duo inani ludus. Usu vocent fastidii an, in atomorum perpetua contentiones duo. Wisi libris minimum ea est, at primis molestiae vim.</p>
+                        <p>Para garantir que as animações sejam sempre fluídas, e beirem aos 60 quadros por segundo (FPS), há uma única regra a ser seguida:</strong></p>
+                        <blockquote>
+                            Anime apenas as propriedades <strong>opacity</strong> e <strong>transform</strong>.
+                        </blockquote>
+                        <p>As consequências em alterar propriedades além dessas serão de sua responsabilidade.</p>
                     </article>
                     <aside class="example"></aside>
                 </div>
