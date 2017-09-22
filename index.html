@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS Animations!</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./layout.css">
+    <link rel="stylesheet" href="./animations.css">
+    <link rel="stylesheet" href="./examples.css">
 </head>
 <body>
     <div class="wrapper">
@@ -14,22 +16,67 @@
             <div class="separator"></div>
             <nav class="menu">
                 <ul>
-                    <li><a href="#">Transition</a></li>
-                    <li><a href="#">Keyframes</a></li>
-                    <li class="highlight"><a href="#">Regra de Ouro!</a></li>
+                    <li>
+                        <a data-content="transition" href="#">
+                            Transition
+                        </a>
+                    </li>
+                    <li>
+                        <a data-content="keyframes" href="#">
+                            Keyframes
+                        </a>
+                    </li>
+                    <li class="highlight">
+                        <a data-content="golden-rule" href="#">
+                            Regra de Ouro!
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
         <section class="body">
-            <h1 class="title">Animações com <br />a regra @keyframes</h1>
-            <div class="content">
-                <article class="text">
-                    <p>Lorem ipsum dolor sit amet, per dico vulputate voluptatibus ne. Cetero feugait repudiare nec no, pro aliquam expetendis ea, ea minim error corrumpit per. Diceret praesent intellegam ex mei, ad mea recteque splendide posidonium, mei ex probo nullam. Ferri imperdiet te eam.</p>
-                    <p>His mollis discere denique eu. Id quo duis neglegentur consectetuer. Nonumes delicata in nam. Eos ut integre consectetuer, an duo inani ludus. Usu vocent fastidii an, in atomorum perpetua contentiones duo. Wisi libris minimum ea est, at primis molestiae vim.</p>
-                </article>
-                <aside class="right"></aside>
+            <div class="scene active" data-id="transition">
+                <h1 class="title">Transição de propriedades</h1>
+                <div class="content">
+                    <article class="text">
+                        <p>As transições do CSS fornecem uma forma de controlar a velocidade das animações ao alterar propriedades CSS de um elemento.</p>
+                        <p>Ao invés das mudanças de propriedades serem efetuadas de imediato, você pode fazer com que as mudanças aconteçam ao longo de um período de tempo.</p>
+                        <code style="white-space: pre-wrap">
+element {
+    transition-duration: 1s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+}
+                        </code>
+                    </article>
+                    <aside class="example">
+                        <button class="example-1">Olha aqui!</button>
+                    </aside>
+                </div>
+            </div>
+            <div class="scene" data-id="keyframes">
+                <h1 class="title">Animações com <br />a regra @keyframes</h1>
+                <div class="content">
+                    <article class="text">
+                        <p>As animações CSS tornam possível animar transições de um estilo para outro. As animações consistem em dois componentes: um estilo descrevendo a animação e um set de <strong>keyframes</strong> que indicam quais propriedades o elemento possuirá em determinados estados.</p>
+                    </article>
+                    <aside class="example">
+                        <div class="example-2">Vamos lá, você consegue! Eu confio em você! É sério!</div>
+                    </aside>
+                </div>
+            </div>
+            <div class="scene" data-id="golden-rule">
+                <h1 class="title">A Regra de Ouro!</h1>
+                <div class="content">
+                    <article class="text">
+                        <p>Lorem ipsum dolor sit amet, per dico vulputate voluptatibus ne. Cetero feugait repudiare nec no, pro aliquam expetendis ea, ea minim error corrumpit per. Diceret praesent intellegam ex mei, ad mea recteque splendide posidonium, mei ex probo nullam. Ferri imperdiet te eam.</p>
+                        <p>His mollis discere denique eu. Id quo duis neglegentur consectetuer. Nonumes delicata in nam. Eos ut integre consectetuer, an duo inani ludus. Usu vocent fastidii an, in atomorum perpetua contentiones duo. Wisi libris minimum ea est, at primis molestiae vim.</p>
+                    </article>
+                    <aside class="example"></aside>
+                </div>
             </div>
         </section>
     </div>
+    <script src="./navigation.js"></script>
 </body>
 </html>

@@ -1,0 +1,67 @@
+.appname {
+    opacity: 0;
+    animation: fade-in-right ease .4s forwards;
+}
+
+.menu {
+    opacity: 0;
+    animation: fade-in-right ease .4s forwards;
+    animation-delay: .8s;
+}
+
+.separator {
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: grow-left .5s ease forwards;
+    animation-delay: .4s;
+}
+
+.title {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fade-in-bottom .8s ease forwards;
+}
+
+.text {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fade-in-bottom .8s ease forwards;
+}
+
+.example {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fade-in-bottom 2s ease forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes fade-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes grow-left {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
